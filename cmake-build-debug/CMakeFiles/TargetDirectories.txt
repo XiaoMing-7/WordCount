@@ -1,3 +1,0 @@
-E:/Code/Clion/WordCount/cmake-build-debug/CMakeFiles/WordCount.dir
-E:/Code/Clion/WordCount/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Code/Clion/WordCount/cmake-build-debug/CMakeFiles/rebuild_cache.dir

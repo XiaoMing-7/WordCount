@@ -1,18 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include<windows.h>
 
-int wordCount(char* parameters, char* fileName);
+int main(int argc, char* argv[]) {       //参数argv[1}表示输入控制参数，argv[2]表示文件名
 
-int main() {
-    char parameters[5];
-    char filename[30];
-    scanf("%s %s", parameters, filename);
-    wordCount(parameters, filename);
-    return 0;
-}
-
-int wordCount(char* parameters, char* fileName) {  //parameters为控制参数 fileName为读取文件名
     int totalChar = 0;      //总字符数
     int totalWord = 0;      //总单词数
     char buffer[1024];      //缓冲区，存储从文件中读到的内容，这里是以1024（一行）为单位
@@ -26,13 +18,13 @@ int wordCount(char* parameters, char* fileName) {  //parameters为控制参数 fileNa
     FILE* fp;                           //指向文件的指针
 
     //判断输入的参数是否正确
-    if (parameters[1] != 'c' && parameters[1] != 'w') {
-        perror("parameters is not correct");
+    if (!(strcmp(argv[1], "-c")) && !(strcmp(argv[1], "-w"))) {
+        perror("parameters is not correct!");
         return -1;
     }
 
     //判断是否能打开输入的文件
-    if ((fp = fopen(fileName, "rb")) == NULL) {
+    if ((fp = fopen(argv[2], "rb")) == NULL) {
         perror("can't open");
         return -1;
     }
@@ -68,11 +60,12 @@ int wordCount(char* parameters, char* fileName) {  //parameters为控制参数 fileNa
     }
 
     if (c != ' ' && c != ',') {
-        totalWord += 1;                     //此处加1，因为最后一个单词如果后面没有空格或逗号会导致单词数少一
+        totalWord += 1;                   //此处加1，因为最后一个单词如果后面没有空格或逗号会导致单词数少一
     }
 
     fclose(fp);
-    if (parameters[1] == 'c') {
+
+    if (!(strcmp(argv[1], "-c"))) {
         printf("字符数:%d", totalChar);
     }
     else {

@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include<windows.h>
 
-int main(int argc, char* argv[]) {       //²ÎÊıargv[1}±íÊ¾ÊäÈë¿ØÖÆ²ÎÊı£¬argv[2]±íÊ¾ÎÄ¼şÃû
+int main(int argc, char* argv[]) {       //²ÎÊıargv[1]±íÊ¾ÊäÈë¿ØÖÆ²ÎÊı£¬argv[2]±íÊ¾ÎÄ¼şÃû
 
     int totalChar = 0;      //×Ü×Ö·ûÊı
     int totalWord = 0;      //×Üµ¥´ÊÊı
@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {       //²ÎÊıargv[1}±íÊ¾ÊäÈë¿ØÖÆ²ÎÊı£¬argv[2]±
     FILE* fp;                           //Ö¸ÏòÎÄ¼şµÄÖ¸Õë
 
     //ÅĞ¶ÏÊäÈëµÄ²ÎÊıÊÇ·ñÕıÈ·
-    if (!(strcmp(argv[1], "-c")) && !(strcmp(argv[1], "-w"))) {
+    if ((strcmp(argv[1], "-c")!=0) && (strcmp(argv[1], "-w")!=0)) {
         perror("parameters is not correct!");
         return -1;
     }

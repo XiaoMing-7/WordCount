@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {       //²ÎÊıargv[1]±íÊ¾ÊäÈë¿ØÖÆ²ÎÊı£¬argv[2]±
 
     fclose(fp);
 
-    if (!(strcmp(argv[1], "-c"))) {
+    if ((strcmp(argv[1], "-w"))!=0) {
         printf("×Ö·ûÊı:%d", totalChar);
     }
     else {

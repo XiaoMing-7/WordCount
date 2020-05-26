@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {       //²ÎÊıargv[1]±íÊ¾ÊäÈë¿ØÖÆ²ÎÊı£¬argv[2]±
 
             if (c == '\r') {                //ÅĞ¶Ï»»ĞĞ£¬»»ĞĞÔòÍË³öÑ­»·
                 isEndOfLine = true;
+                charNum++;
                 break;
             }
             //¼ÆËãµ¥´ÊÊı
